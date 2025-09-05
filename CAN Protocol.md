@@ -1,4 +1,4 @@
-# OCTOPUS Internal CAN Description
+# OCTOPUS CAN Protocol Description
 
 # Table of Contents
 
@@ -1088,10 +1088,31 @@ The routing table can be manipulated to assign specific CAN IDs to modules manua
     </tr>
     <tr>
         <td style="text-align: center;">132</td>
-        <td style="text-align: center;">FPGA revision ID</td>
+        <td style="text-align: center;">FPGA revision ID (Obsolete)</td>
         <td><p>UInt8 (READONLY)</p>
-        <p><strong>Revision ID</strong></p></td>
+        <p><strong>Reserved</strong></p></td>
         <td style="text-align: center;"></td>
+    </tr>
+    <tr>
+        <td rowspan="2" style="text-align: center;">133</td>
+        <td rowspan="2" style="text-align: center;">MCU and FPGA Revision</td>
+        <td>
+            <p>UInt32 (READONLY)</p>
+            <p><strong>MCU Revision</strong></p>
+            <p>2^0 - 2^15 = MCU Version Bugfix</p>
+            <p>2^16 - 2^23 = MCU Version Minor</p>
+            <p>2^24 - 2^31 = MCU Version Major</p>
+        </td>
+        <td rowspan="2" style="text-align: center;"></td>
+    </tr>
+    <tr>
+        <td>
+            <p>UInt32 (READONLY)</p>
+            <p><strong>FPGA Revision</strong></p>
+            <p>2^0 - 2^15 = Reserved</p>
+            <p>2^16 - 2^23 = FPGA Version Minor</p>
+            <p>2^24 - 2^31 = FPGA Version Major</p>
+        </td>
     </tr>
     <tr>
         <td style="text-align: center;">144</td>
